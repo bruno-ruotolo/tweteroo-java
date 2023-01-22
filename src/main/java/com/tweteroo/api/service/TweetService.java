@@ -1,5 +1,7 @@
 package com.tweteroo.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,4 +27,10 @@ public class TweetService {
     PageRequest pageable = PageRequest.of(page, 5, sort);
     return repository.findAll(pageable);
   }
+
+  public List<TweetModel> getUserTweets(String username) {
+    return repository.findByUsername(username);
+  }
 }
+
+// TODO: ADICIONAR AVATAR NO RETORNO DOS TWEETS

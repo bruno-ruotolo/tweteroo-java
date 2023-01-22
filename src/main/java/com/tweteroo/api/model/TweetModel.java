@@ -29,4 +29,5 @@ public class TweetModel {
 
   @Column(length = 280, nullable = false)
   private String tweet;
+
 }
